@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Monte seu HOT DOG:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_nome" />
+
+    <TextView
+        android:id="@+id/tv_escolha"
+        android:text="Proteina:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
+        android:layout_marginTop="16dp"/>
+    <RadioGroup
+        android:id="@+id/rg_proteina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_escolha"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp">
+        <RadioButton
+            android:id="@+id/rb_salsicha"
+            android:text="Salsicha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingEnd="12dp"/>
+        <RadioButton
+            android:id="@+id/rb_linguica"
+            android:text="Linguiça"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_escolha_molho"
+        android:text="Molhos:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rg_proteina" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" android:layout_marginTop="16dp"/>
+    <CheckBox
+        android:id="@+id/cb_catchup"
+        android:text="Catchup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_escolha_molho"
+        android:layout_marginTop="8dp"/>
+    <CheckBox
+        android:id="@+id/cb_mostarda"
+        android:text="Mostarda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_escolha_molho"
+        android:layout_marginTop="8dp"/>
+    <CheckBox
+        android:text="Maionese"
+        android:id="@+id/cb_maionese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_escolha_molho"
+        android:layout_marginTop="8dp"/>
+    <TextView
+        android:text="Acompanhamentos:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/tv_acompanhamentos"
+        app:layout_constraintTop_toBottomOf="@+id/cb_catchup"
+        android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"/>
+
+    <Switch
+        android:id="@+id/sw_alface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="-24dp"
+        android:text="Alface"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_acompanhamentos"
+        app:layout_constraintTop_toBottomOf="@+id/tv_acompanhamentos"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/sw_tomate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-24dp"
+        android:text="Tomate"
+        app:layout_constraintEnd_toEndOf="@+id/tv_acompanhamentos"
+        app:layout_constraintTop_toBottomOf="@+id/sw_alface"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/sw_queijo_ralado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-24dp"
+        android:text="Queijo Ralado"
+        app:layout_constraintEnd_toEndOf="@+id/tv_acompanhamentos"
+        app:layout_constraintTop_toBottomOf="@+id/sw_tomate"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <EditText
+        android:id="@+id/et_nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Informe o seu nome"
+        android:text=""
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_pedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Realizar Pedido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_queijo_ralado" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
