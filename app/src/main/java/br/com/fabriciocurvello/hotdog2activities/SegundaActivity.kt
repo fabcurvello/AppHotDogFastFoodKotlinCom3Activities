@@ -2,12 +2,19 @@ package br.com.fabriciocurvello.hotdog2activities
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+
 class SegundaActivity : AppCompatActivity() {
+
+    //Iniciando as variáveis e definindo os seus tipos:
+    // SA -> SegundaActivity
+    lateinit var clienteTvSA: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -17,6 +24,10 @@ class SegundaActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        //"Linkando" as variáveis às views do activity_segunda.xml
+        clienteTvSA = findViewById(R.id.tv_cliente_sa)
+
 
         //Recuperar dados que foram enviados via intent
         val dados = intent.extras
@@ -33,10 +44,20 @@ class SegundaActivity : AppCompatActivity() {
         val molhos = dados!!.getString("chave_molhos_selecionados")
         val acompanhamentos = dados!!.getString("chave_acompanhamentos_selecionados")
 
-        Log.i("SELECOES", cliente + "\n" +
+//        Log.i("SELECOES", cliente + "\n" +
+//                proteinas + "\n" +
+//                molhos + "\n" +
+//                acompanhamentos)
+
+        //setando o nome do cliente em clienteTvSA
+        clienteTvSA.text = cliente
+
+        var pedido = "Cliente: " + cliente + "\n\n" +
                 proteinas + "\n" +
                 molhos + "\n" +
-                acompanhamentos)
+                acompanhamentos
+
+
 
     }//fim do onCreate()
 }
