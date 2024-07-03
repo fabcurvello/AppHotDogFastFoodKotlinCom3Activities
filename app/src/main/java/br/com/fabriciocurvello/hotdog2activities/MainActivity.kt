@@ -71,12 +71,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
             // Toast.makeText(this, "CLICOU", Toast.LENGTH_SHORT).show()
-            Log.i("SELECOES", cliente + "\n" +
-                    proteinaSelecionada + "\n" +
-                    molhosSelecionados + "\n" +
-                    acompanhamentosSelecionados)
+//            Log.i("SELECOES", cliente + "\n" +
+//                    proteinaSelecionada + "\n" +
+//                    molhosSelecionados + "\n" +
+//                    acompanhamentosSelecionados)
         }
-    }//fim do onCreate
+    }//fim do onCreate()
 
     private fun nomeCliente(): String {
         var cliente = nomeEt.text.toString()
