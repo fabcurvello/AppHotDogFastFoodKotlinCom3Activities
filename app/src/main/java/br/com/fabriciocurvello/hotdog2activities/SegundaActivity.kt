@@ -14,6 +14,10 @@ class SegundaActivity : AppCompatActivity() {
     //Iniciando as variáveis e definindo os seus tipos:
     // SA -> SegundaActivity
     lateinit var clienteTvSA: TextView
+    lateinit var proteinaTvSA: TextView
+    lateinit var molhosTvSA: TextView
+    lateinit var acompanhamentosTvSA: TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +30,10 @@ class SegundaActivity : AppCompatActivity() {
         }
 
         //"Linkando" as variáveis às views do activity_segunda.xml
-        clienteTvSA = findViewById(R.id.tv_cliente_sa)
+        clienteTvSA = findViewById(R.id.tv_cliente_saida_sa)
+        proteinaTvSA = findViewById(R.id.tv_proteina_saida_sa)
+        molhosTvSA = findViewById(R.id.tv_molhos_saida_sa)
+        acompanhamentosTvSA = findViewById(R.id.tv_acompanhamentos_saida_sa)
 
 
         //Recuperar dados que foram enviados via intent
@@ -44,13 +51,16 @@ class SegundaActivity : AppCompatActivity() {
         val molhos = dados!!.getString("chave_molhos_selecionados")
         val acompanhamentos = dados!!.getString("chave_acompanhamentos_selecionados")
 
-//        Log.i("SELECOES", cliente + "\n" +
-//                proteinas + "\n" +
-//                molhos + "\n" +
-//                acompanhamentos)
+        Log.i("SELECOES", cliente + "\n" +
+                proteinas + "\n" +
+                molhos + "\n" +
+                acompanhamentos)
 
         //setando o nome do cliente em clienteTvSA
         clienteTvSA.text = cliente
+        proteinaTvSA.text = proteinas
+        molhosTvSA.text = molhos
+        acompanhamentosTvSA.text = acompanhamentos
 
         var pedido = "Cliente: " + cliente + "\n\n" +
                 proteinas + "\n" +

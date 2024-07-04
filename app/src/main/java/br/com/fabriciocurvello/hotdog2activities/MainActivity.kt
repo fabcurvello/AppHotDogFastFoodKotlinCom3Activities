@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
     private fun nomeCliente(): String {
         var cliente = nomeEt.text.toString()
         if (cliente.isNullOrEmpty()) {
-            cliente = "Não informou nome"
+            cliente = "Cliente não informou nome"
         }
         return cliente
     }
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                 proteinaSelecionadaStr = "Salsicha"
             }
         }
-        return "Proteína: $proteinaSelecionadaStr"
+        return proteinaSelecionadaStr
     }
 
 //    private fun molhos(): String {
@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
         if (maioneseCb.isChecked) molhosSelecionados.add("Maionese")
 
         return if (molhosSelecionados.isEmpty()) "Sem molho."
-        else "Molhos selecionados:\n - ${molhosSelecionados.joinToString("\n - ")}"
+        else " - ${molhosSelecionados.joinToString("\n - ")}"
     }
 
 //    private fun acompanhamentos(): String {
@@ -153,7 +153,7 @@ class MainActivity : AppCompatActivity() {
 //            acompanhamentosSelecionados += "\n - Queijo Ralado"
 //        }
 //        if (acompanhamentosSelecionados == "Acompanhamentos: ") {
-//            acompanhamentosSelecionados = "Sem acompanhamentos"
+//            acompanhamentosSelecionados = "Sem acompanhamentos."
 //        }
 //        return acompanhamentosSelecionados
 //    }
@@ -166,7 +166,7 @@ class MainActivity : AppCompatActivity() {
         if (tomateSW.isChecked) acompanhamentosSelecionados.add("Tomate")
         if (queijoRaladoSw.isChecked) acompanhamentosSelecionados.add("Queijo Ralado")
 
-        return if (acompanhamentosSelecionados.isEmpty()) "Sem acompanhamentos"
-        else "Acompanhamentos:\n - ${acompanhamentosSelecionados.joinToString("\n - ")}"
+        return if (acompanhamentosSelecionados.isEmpty()) "Sem acompanhamentos."
+        else " - ${acompanhamentosSelecionados.joinToString("\n - ")}"
     }
 }

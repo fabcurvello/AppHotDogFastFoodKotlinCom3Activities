@@ -5,125 +5,54 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF9800"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv_titulo_segunda_activity"
+    <Button
+        android:id="@+id/bt_pedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Monte seu HOT DOG:"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#3F51B5"
+        android:text="Realizar Pedido"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_nome" />
+        app:layout_constraintTop_toBottomOf="@+id/sw_queijo_ralado" />
 
-    <TextView
-        android:id="@+id/tv_escolha"
-        android:text="Proteina:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_segunda_activity"
-        android:layout_marginTop="16dp"/>
-    <RadioGroup
-        android:id="@+id/rg_proteina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tv_escolha"
-        app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="24dp">
-        <RadioButton
-            android:id="@+id/rb_salsicha"
-            android:text="Salsicha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:paddingEnd="12dp"/>
-        <RadioButton
-            android:id="@+id/rb_linguica"
-            android:text="Linguiça"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/tv_escolha_molho"
-        android:text="Molhos:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/rg_proteina" app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp" android:layout_marginTop="16dp"/>
     <CheckBox
         android:id="@+id/cb_catchup"
-        android:text="Catchup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_escolha_molho"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:text="Catchup"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_escolha_molho" />
+
     <CheckBox
         android:id="@+id/cb_mostarda"
-        android:text="Mostarda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:text="Mostarda"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_escolha_molho"
-        android:layout_marginTop="8dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_escolha_molho" />
+
     <CheckBox
-        android:text="Maionese"
         android:id="@+id/cb_maionese"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_escolha_molho"
-        android:layout_marginTop="8dp"/>
-    <TextView
-        android:text="Acompanhamentos:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:id="@+id/tv_acompanhamentos"
-        app:layout_constraintTop_toBottomOf="@+id/cb_catchup"
-        android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"/>
-
-    <Switch
-        android:id="@+id/sw_alface"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="-24dp"
-        android:text="Alface"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_acompanhamentos"
-        app:layout_constraintTop_toBottomOf="@+id/tv_acompanhamentos"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-    <Switch
-        android:id="@+id/sw_tomate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="-24dp"
-        android:text="Tomate"
-        app:layout_constraintEnd_toEndOf="@+id/tv_acompanhamentos"
-        app:layout_constraintTop_toBottomOf="@+id/sw_alface"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-    <Switch
-        android:id="@+id/sw_queijo_ralado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="-24dp"
-        android:text="Queijo Ralado"
-        app:layout_constraintEnd_toEndOf="@+id/tv_acompanhamentos"
-        app:layout_constraintTop_toBottomOf="@+id/sw_tomate"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        android:layout_marginEnd="16dp"
+        android:text="Maionese"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_escolha_molho" />
 
     <EditText
         android:id="@+id/et_nome"
@@ -134,23 +63,115 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Informe o seu nome"
-        android:text=""
         android:inputType="text"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/bt_pedido"
+    <RadioGroup
+        android:id="@+id/rg_proteina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Realizar Pedido"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sw_queijo_ralado" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_escolha">
+
+        <RadioButton
+            android:id="@+id/rb_salsicha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingEnd="12dp"
+            android:text="Salsicha"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rb_linguica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Linguiça"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/sw_alface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="-60dp"
+        android:text="Alface"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_acompanhamentos"
+        app:layout_constraintTop_toBottomOf="@+id/tv_acompanhamentos"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/sw_tomate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-60dp"
+        android:text="Tomate"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_acompanhamentos"
+        app:layout_constraintTop_toBottomOf="@+id/sw_alface"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/sw_queijo_ralado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-60dp"
+        android:text="Queijo Ralado"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_acompanhamentos"
+        app:layout_constraintTop_toBottomOf="@+id/sw_tomate"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/tv_titulo_segunda_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Monte seu HOT DOG:"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_nome" />
+
+    <TextView
+        android:id="@+id/tv_escolha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Proteina:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo_segunda_activity" />
+
+    <TextView
+        android:id="@+id/tv_escolha_molho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Molhos:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rg_proteina" />
+
+    <TextView
+        android:id="@+id/tv_acompanhamentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Acompanhamentos:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_catchup" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
