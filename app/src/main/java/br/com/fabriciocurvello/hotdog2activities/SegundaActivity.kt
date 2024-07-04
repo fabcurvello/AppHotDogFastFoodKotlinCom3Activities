@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -19,8 +20,8 @@ class SegundaActivity : AppCompatActivity() {
     lateinit var proteinaTvSA: TextView
     lateinit var molhosTvSA: TextView
     lateinit var acompanhamentosTvSA: TextView
-    lateinit var enviarBtSA: Button
-    lateinit var refazerBtSA: Button
+    lateinit var voltarIvSA: ImageView
+    lateinit var avancarIvSA: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,8 +39,8 @@ class SegundaActivity : AppCompatActivity() {
         proteinaTvSA = findViewById(R.id.tv_proteina_saida_sa)
         molhosTvSA = findViewById(R.id.tv_molhos_saida_sa)
         acompanhamentosTvSA = findViewById(R.id.tv_acompanhamentos_saida_sa)
-        enviarBtSA = findViewById(R.id.bt_enviar_sa)
-        refazerBtSA = findViewById(R.id.bt_refazer_sa)
+        voltarIvSA = findViewById(R.id.im_voltar_sa)
+        avancarIvSA = findViewById(R.id.im_avancar_sa)
 
 
         //Recuperar dados que foram enviados via intent
@@ -73,14 +74,14 @@ class SegundaActivity : AppCompatActivity() {
                 molhos + "\n" +
                 acompanhamentos
 
-        enviarBtSA.setOnClickListener {
+        avancarIvSA.setOnClickListener {
             val intent = Intent(this, TerceiraActivity::class.java)
             intent.putExtra("chave_cliente", cliente)
             startActivity(intent)
             finish() // encerra esta activity
         }
 
-        refazerBtSA.setOnClickListener {
+        voltarIvSA.setOnClickListener {
             finish() // encerra esta activity
         }
 

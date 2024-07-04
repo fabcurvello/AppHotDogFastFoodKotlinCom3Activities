@@ -106,38 +106,15 @@ class MainActivity : AppCompatActivity() {
             val proteinaSelecionada: RadioButton = findViewById(proteinaSelecionadaId)
 
             if (proteinaSelecionada.toString().contains("linguica")) {
-                proteinaSelecionadaStr = "Linguiça"
+                proteinaSelecionadaStr = "- Linguiça"
             }
             if (proteinaSelecionada.toString().contains("salsicha")) {
-                proteinaSelecionadaStr = "Salsicha"
+                proteinaSelecionadaStr = "- Salsicha"
             }
         }
         return proteinaSelecionadaStr
     }
 
-//    private fun molhos(): String {
-//        var molhosSelecionados = "Molhos selecionados: "
-//
-//        val catchup = catchupCb.isChecked
-//        if (catchup) {
-//            molhosSelecionados += "\n - Catchup"
-//        }
-//        val mostarda = mostardaCb.isChecked
-//        if (mostarda) {
-//            molhosSelecionados += "\n - Mostarda"
-//        }
-//        val maionese = maioneseCb.isChecked
-//        if (maionese) {
-//            molhosSelecionados += "\n - Maionese"
-//        }
-//        if (molhosSelecionados == "Molhos selecionados: ") {
-//            molhosSelecionados = "Sem molho"
-//        }
-//        return molhosSelecionados
-//    }
-
-
-    //FUN molhos() resumida usando mutableListOf:
     private fun molhos(): String {
         val molhosSelecionados = mutableListOf<String>()
 
@@ -149,28 +126,7 @@ class MainActivity : AppCompatActivity() {
         else " - ${molhosSelecionados.joinToString("\n - ")}"
     }
 
-//    private fun acompanhamentos(): String {
-//        var acompanhamentosSelecionados = "Acompanhamentos: "
-//
-//        val alface = alfaceSw.isChecked
-//        if (alface) {
-//            acompanhamentosSelecionados += "\n - Alface"
-//        }
-//        val tomate = tomateSW.isChecked
-//        if (tomate) {
-//            acompanhamentosSelecionados += "\n - Tomate"
-//        }
-//        val queijoRalado = queijoRaladoSw.isChecked
-//        if (queijoRalado) {
-//            acompanhamentosSelecionados += "\n - Queijo Ralado"
-//        }
-//        if (acompanhamentosSelecionados == "Acompanhamentos: ") {
-//            acompanhamentosSelecionados = "Sem acompanhamentos"
-//        }
-//        return acompanhamentosSelecionados
-//    }
 
-    //FUN acompanhamentos() resumida usando mutableListOf:
     private fun acompanhamentos(): String {
         val acompanhamentosSelecionados = mutableListOf<String>()
 

@@ -13,7 +13,7 @@
         android:id="@+id/bt_pedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:backgroundTint="#3F51B5"
         android:text="Realizar Pedido"
         android:textSize="20sp"
