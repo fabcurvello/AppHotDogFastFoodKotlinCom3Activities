@@ -2,6 +2,7 @@ package br.com.fabriciocurvello.hotdog2activities
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,8 @@ class SegundaActivity : AppCompatActivity() {
     lateinit var proteinaTvSA: TextView
     lateinit var molhosTvSA: TextView
     lateinit var acompanhamentosTvSA: TextView
+    lateinit var enviarBtSA: Button
+    lateinit var refazerBtSA: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +37,8 @@ class SegundaActivity : AppCompatActivity() {
         proteinaTvSA = findViewById(R.id.tv_proteina_saida_sa)
         molhosTvSA = findViewById(R.id.tv_molhos_saida_sa)
         acompanhamentosTvSA = findViewById(R.id.tv_acompanhamentos_saida_sa)
+        enviarBtSA = findViewById(R.id.bt_enviar_sa)
+        refazerBtSA = findViewById(R.id.bt_refazer_sa)
 
 
         //Recuperar dados que foram enviados via intent
@@ -67,7 +72,11 @@ class SegundaActivity : AppCompatActivity() {
                 molhos + "\n" +
                 acompanhamentos
 
+        enviarBtSA.setOnClickListener {  }
 
+        refazerBtSA.setOnClickListener {
+            finish()
+        }
 
     }//fim do onCreate()
 }
