@@ -1,5 +1,6 @@
 package br.com.fabriciocurvello.hotdog2activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -72,10 +73,15 @@ class SegundaActivity : AppCompatActivity() {
                 molhos + "\n" +
                 acompanhamentos
 
-        enviarBtSA.setOnClickListener {  }
+        enviarBtSA.setOnClickListener {
+            val intent = Intent(this, TerceiraActivity::class.java)
+            intent.putExtra("chave_cliente", cliente)
+            startActivity(intent)
+            finish() // encerra esta activity
+        }
 
         refazerBtSA.setOnClickListener {
-            finish()
+            finish() // encerra esta activity
         }
 
     }//fim do onCreate()

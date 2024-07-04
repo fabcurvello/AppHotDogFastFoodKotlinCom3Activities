@@ -1,8 +1,10 @@
 package br.com.fabriciocurvello.hotdog2activities
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -48,6 +50,15 @@ class MainActivity : AppCompatActivity() {
         tomateSW = findViewById(R.id.sw_tomate)
         queijoRaladoSw = findViewById(R.id.sw_queijo_ralado)
 
+        //Ocultar o teclado quando terminar de digitar no EditText e clicar em outro item.
+        nomeEt.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                // Oculta o teclado quando o EditText perde o foco
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(nomeEt.windowToken, 0)
+            }
+        }
+
         //Listener no Botão
         pedidoBt.setOnClickListener {
 
@@ -76,6 +87,7 @@ class MainActivity : AppCompatActivity() {
 //                    molhosSelecionados + "\n" +
 //                    acompanhamentosSelecionados)
         }
+
     }//fim do onCreate()
 
     private fun nomeCliente(): String {
@@ -119,7 +131,7 @@ class MainActivity : AppCompatActivity() {
 //            molhosSelecionados += "\n - Maionese"
 //        }
 //        if (molhosSelecionados == "Molhos selecionados: ") {
-//            molhosSelecionados = "Sem molho."
+//            molhosSelecionados = "Sem molho"
 //        }
 //        return molhosSelecionados
 //    }
@@ -133,7 +145,7 @@ class MainActivity : AppCompatActivity() {
         if (mostardaCb.isChecked) molhosSelecionados.add("Mostarda")
         if (maioneseCb.isChecked) molhosSelecionados.add("Maionese")
 
-        return if (molhosSelecionados.isEmpty()) "Sem molho."
+        return if (molhosSelecionados.isEmpty()) "Sem molho"
         else " - ${molhosSelecionados.joinToString("\n - ")}"
     }
 
@@ -153,7 +165,7 @@ class MainActivity : AppCompatActivity() {
 //            acompanhamentosSelecionados += "\n - Queijo Ralado"
 //        }
 //        if (acompanhamentosSelecionados == "Acompanhamentos: ") {
-//            acompanhamentosSelecionados = "Sem acompanhamentos."
+//            acompanhamentosSelecionados = "Sem acompanhamentos"
 //        }
 //        return acompanhamentosSelecionados
 //    }
@@ -166,7 +178,8 @@ class MainActivity : AppCompatActivity() {
         if (tomateSW.isChecked) acompanhamentosSelecionados.add("Tomate")
         if (queijoRaladoSw.isChecked) acompanhamentosSelecionados.add("Queijo Ralado")
 
-        return if (acompanhamentosSelecionados.isEmpty()) "Sem acompanhamentos."
+        return if (acompanhamentosSelecionados.isEmpty()) "Sem acompanhamentos"
         else " - ${acompanhamentosSelecionados.joinToString("\n - ")}"
     }
+
 }

@@ -13,6 +13,9 @@
         android:theme="@style/Theme.HotDog2Activities"
         tools:targetApi="31">
         <activity
+            android:name=".TerceiraActivity"
+            android:exported="false" />
+        <activity
             android:name=".SegundaActivity"
             android:exported="false" />
         <activity
