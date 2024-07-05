@@ -23,7 +23,6 @@ class SegundaActivity : AppCompatActivity() {
     lateinit var voltarIvSA: ImageView
     lateinit var avancarIvSA: ImageView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,14 +33,7 @@ class SegundaActivity : AppCompatActivity() {
             insets
         }
 
-        //"Linkando" as variáveis às views do activity_segunda.xml
-        clienteTvSA = findViewById(R.id.tv_cliente_saida_sa)
-        proteinaTvSA = findViewById(R.id.tv_proteina_saida_sa)
-        molhosTvSA = findViewById(R.id.tv_molhos_saida_sa)
-        acompanhamentosTvSA = findViewById(R.id.tv_acompanhamentos_saida_sa)
-        voltarIvSA = findViewById(R.id.im_voltar_sa)
-        avancarIvSA = findViewById(R.id.im_avancar_sa)
-
+        setupViews()
 
         //Recuperar dados que foram enviados via intent
         val dados = intent.extras
@@ -69,11 +61,6 @@ class SegundaActivity : AppCompatActivity() {
         molhosTvSA.text = molhos
         acompanhamentosTvSA.text = acompanhamentos
 
-        var pedido = "Cliente: " + cliente + "\n\n" +
-                proteinas + "\n" +
-                molhos + "\n" +
-                acompanhamentos
-
         avancarIvSA.setOnClickListener {
             val intent = Intent(this, TerceiraActivity::class.java)
             intent.putExtra("chave_cliente", cliente)
@@ -86,4 +73,14 @@ class SegundaActivity : AppCompatActivity() {
         }
 
     }//fim do onCreate()
+
+    private fun setupViews() {
+        //"Linkando" as variáveis às views do activity_segunda.xml
+        clienteTvSA = findViewById(R.id.tv_cliente_saida_sa)
+        proteinaTvSA = findViewById(R.id.tv_proteina_saida_sa)
+        molhosTvSA = findViewById(R.id.tv_molhos_saida_sa)
+        acompanhamentosTvSA = findViewById(R.id.tv_acompanhamentos_saida_sa)
+        voltarIvSA = findViewById(R.id.im_voltar_sa)
+        avancarIvSA = findViewById(R.id.im_avancar_sa)
+    }
 }

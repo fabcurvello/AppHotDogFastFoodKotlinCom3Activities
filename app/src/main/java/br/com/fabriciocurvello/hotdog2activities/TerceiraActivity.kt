@@ -25,8 +25,7 @@ class TerceiraActivity : AppCompatActivity() {
             insets
         }
 
-        clienteTvTA = findViewById(R.id.tv_cliente_ta)
-        novoPedidoBtTA = findViewById(R.id.bt_novo_pedido_ta)
+        setupViews()
 
         val dados = intent.extras
         val cliente = dados!!.getString("chave_cliente")
@@ -47,5 +46,10 @@ class TerceiraActivity : AppCompatActivity() {
             finish() // encerra esta activity
         }
 
+    }
+
+    private fun setupViews() {
+        clienteTvTA = findViewById(R.id.tv_cliente_ta)
+        novoPedidoBtTA = findViewById(R.id.bt_novo_pedido_ta)
     }
 }

@@ -39,6 +39,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        setupViews()
+        setupListeners()
+
+    }//fim do onCreate()
+
+    private fun setupViews() {
         //"Linkando" as variáveis às views do activity_main.xml
         nomeEt = findViewById(R.id.et_nome)
         pedidoBt = findViewById(R.id.bt_pedido)
@@ -49,16 +55,9 @@ class MainActivity : AppCompatActivity() {
         alfaceSw = findViewById(R.id.sw_alface)
         tomateSW = findViewById(R.id.sw_tomate)
         queijoRaladoSw = findViewById(R.id.sw_queijo_ralado)
+    }
 
-        //Ocultar o teclado quando terminar de digitar no EditText e clicar em outro item.
-        nomeEt.setOnFocusChangeListener { _, hasFocus ->
-            if (!hasFocus) {
-                // Oculta o teclado quando o EditText perde o foco
-                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(nomeEt.windowToken, 0)
-            }
-        }
-
+    private fun setupListeners() {
         //Listener no Botão
         pedidoBt.setOnClickListener {
 
@@ -82,13 +81,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
             // Toast.makeText(this, "CLICOU", Toast.LENGTH_SHORT).show()
-//            Log.i("SELECOES", cliente + "\n" +
-//                    proteinaSelecionada + "\n" +
-//                    molhosSelecionados + "\n" +
-//                    acompanhamentosSelecionados)
+    //            Log.i("SELECOES", cliente + "\n" +
+    //                    proteinaSelecionada + "\n" +
+    //                    molhosSelecionados + "\n" +
+    //                    acompanhamentosSelecionados)
         }
-
-    }//fim do onCreate()
+    }
 
     private fun nomeCliente(): String {
         var cliente = nomeEt.text.toString()
