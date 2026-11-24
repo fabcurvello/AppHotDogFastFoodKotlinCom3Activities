@@ -45,7 +45,6 @@ Exercício aplicado em sala de aula, usado como prática guiada com os alunos.
 Outros repositórios de aula com o mesmo tema:
 
 - [appHotDogJava](https://github.com/fabcurvello/appHotDogJava)
-- [AppHotDogAnima](https://github.com/fabcurvello/AppHotDogAnima)
 - [appHotDogFastFoodKotlin](https://github.com/fabcurvello/appHotDogFastFoodKotlin)
 
 ## Autor
